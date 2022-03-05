@@ -15,7 +15,25 @@ async function getCharacter(id) {
         var data = filterById(result, id) 
         document.getElementById("dataContainer").innerHTML = ''
         console.log(data)
-        let d = `<div class="w-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row md:p-12"><img src=${data['gifUrl']} class=""><div class="capitalize"><p class="text-blue-700 font-bold my-4 text-lg">${data['name']}</p><p>Target : ${data['target']}</p><p>Body Part : ${data['bodyPart']}</p><p>Equipment : ${data['equipment']}</p></div></div>`
+        let d = `<div class="max-w-sm rounded overflow-hidden shadow-lg bg-violet-100">
+        <img class="w-full" src="${data['gifUrl']}" alt="Sunset in the mountains">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 capitalize">${data['name']}</div>
+          <p class="text-gray-700 text-base">
+          Target : ${data['target']}
+          </p>
+          <p class="text-gray-700 text-base">
+          Body Part : ${data['bodyPart']}
+          </p>
+          <p class="text-gray-700 text-base">
+          Equipment : ${data['equipment']}
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">#GetRandom</span>
+        </div>
+      </div>`
+        
         document.getElementById("dataContainer").insertAdjacentHTML("afterbegin", d)
 
     } catch (error) {
@@ -54,3 +72,22 @@ async function getChars() {
         console.log(error);
     }
 }
+
+
+
+// Tabs
+function switchTab(evt, tcid) {
+    // Get all elements with class="tabcontent" and hide them
+    var tabcontent = document.querySelectorAll(".tabcontent");
+    tabcontent.forEach((tc) => {
+      tc.classList.add("hidden");
+    });
+    // Get all elements with class="tablinks" and remove the class "active"
+    var tablinks = document.querySelectorAll(".tablinks");
+    tablinks.forEach((tl) => {
+      tl.classList.remove("activeTabLink");
+    });
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tcid).classList.remove("hidden");
+    evt.classList.add("activeTabLink");
+  }
