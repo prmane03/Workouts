@@ -15,7 +15,7 @@ async function getCharacter(id) {
         var data = filterById(result, id) 
         document.getElementById("dataContainer").innerHTML = ''
         console.log(data)
-        let d = `<div class="w-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row md:p-12"><img src=${data['gifUrl']} class="">${data['target']}</div>`
+        let d = `<div class="w-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row md:p-12"><img src=${data['gifUrl']} class=""><div class="capitalize"><p class="text-blue-700 font-bold my-4 text-lg">${data['name']}</p><p>Target : ${data['target']}</p><p>Body Part : ${data['bodyPart']}</p><p>Equipment : ${data['equipment']}</p></div></div>`
         document.getElementById("dataContainer").insertAdjacentHTML("afterbegin", d)
 
     } catch (error) {
