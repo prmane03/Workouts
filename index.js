@@ -1,3 +1,15 @@
+//menu
+function toggleMenu(el){
+  var menu = document.getElementById(el.dataset.collapse)
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden')
+  } else {
+    menu.classList.add('hidden')
+  }
+}
+
+
+
 var searchInput = document.getElementById("searchInput")
 var searchButton = document.getElementById("searchButton")
 
