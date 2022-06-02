@@ -40,8 +40,14 @@
             background: linear-gradient(to right, #000000, #434343);
         }
 
-        .activeTabLink{
+        .activeTabLink {
             color: #2563eb;
+        }
+
+        #home {
+            background-image: url("https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
 
@@ -50,11 +56,12 @@
 <body>
 
     <!-- navbar  -->
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="#" class="flex">
                 <img src="./img/dumbbell.png" alt="logo" class="h-6 w-auto mr-2">
-                <span class="self-center text-lg font-semibold whitespace-nowrap text-red-600">Workout</span><span class="self-center text-lg font-semibold whitespace-nowrap text-green-600">BIN</span>
+                <span class="self-center text-lg font-semibold whitespace-nowrap text-red-600">Workout</span><span
+                    class="self-center text-lg font-semibold whitespace-nowrap text-green-600">BIN</span>
             </a>
             <div class="flex md:order-2">
                 <!-- <button
@@ -64,9 +71,8 @@
                 <span class="my-auto">Contribute</span>
                 
               </button> -->
-                <a href="https://github.com/prmane03/Workouts" target="_blank"><svg
-                        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48"
-                        style=" fill:#000000;">
+                <a href="https://github.com/prmane03/Workouts" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                        x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48" style=" fill:#000000;">
                         <linearGradient id="rL2wppHyxHVbobwndsT6Ca_AZOZNnY73haj_gr1" x1="4" x2="44" y1="23.508"
                             y2="23.508" gradientUnits="userSpaceOnUse">
                             <stop offset="0" stop-color="#4c4c4c"></stop>
@@ -115,7 +121,7 @@
                     </li>
                     <li>
                         <a class="tablinks" onclick="switchTab(this,'more')" href="#"
-                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">More</a>
+                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Calculators</a>
                     </li>
                     <li>
                         <a class="tablinks" onclick="switchTab(this,'about')" href="#"
@@ -128,7 +134,13 @@
 
     <div class="container mx-auto">
         <!-- tabs  -->
-        <div class="tabcontent justify-center px-6 my-12 " id="home">
+        <div class="tabcontent justify-center   w-full min-h-screen" id="home">
+
+            <div class="flex justify-center h-48 items-center">
+                <p class="text-xl text-white font-bold ">“Your body hears everything your mind says.”</p>
+            </div>
+
+
         </div>
         <!-- tabs  -->
         <div class="tabcontent justify-center px-6 my-12 hidden" id="search-workout">
@@ -137,7 +149,7 @@
                     <div class="input-group relative flex flex-wrap items-stretch w-full mb-4">
                         <input type="search" id="searchInput" list="chars"
                             class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            placeholder="Search Character" aria-label="Search" aria-describedby="button-addon2">
+                            placeholder="Search Workout" aria-label="Search" aria-describedby="button-addon2">
                         <input type="text" id="wid" class="hidden">
                         <button
                             class="btn inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
@@ -161,6 +173,47 @@
         </div>
         <!-- tabs  -->
         <div class="tabcontent justify-center px-6 my-12 hidden" id="more">
+            <div class="bg-white m-12 p-6">
+                <p class="text-xl font-bold py-2">BMI (Body Mass Ratio) Calculator</p>
+                <div class="flex justify-center">
+                    <div class="mx-4">
+                        <label for="BMIweight" class="block text-gray-700 text-sm font-bold mb-2">Weight (in Kg)</label>
+                        <input type="number" name="weight" id="BMIweight"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mx-4">
+                        <label for="BMIhight" class="block text-gray-700 text-sm font-bold mb-2">Height (in cm)</label>
+                        <input type="number" name="hight" id="BMIhight"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                </div>
+                <div class="flex justify-center my-4 font-bold"> BMI is <span id="bmiRes" class="px-2"> 0</span></div>
+                <div class="flex justify-center">
+                    <table class="table">
+                        
+                        <tbody>
+                            <tr>
+                                <th class="px-2">Category</th>
+                                <td class="px-2 bg-yellow-300">Underweight</td>
+                                <td class="px-2 bg-green-300">Normal weight</td>
+                                <td class="px-2 bg-orange-400">Overweight</td>
+                                <td class="px-2 bg-red-400">Obesity class</td>
+                                <td class="px-2 bg-red-500">Obesity class II</td>
+                                <td class="px-2 bg-red-600">Obesity class IlI</td>
+                            </tr>
+                            <tr>
+                                <th class="px-2">BMI</th>
+                                <td class="px-2">Below 18.5</td>
+                                <td class="px-2">18.5-24.9</td>
+                                <td class="px-2">25.0-29.9</td>
+                                <td class="px-2">30.0-34.9</td>
+                                <td class="px-2">35.0-39.9</td>
+                                <td class="px-2">Above 40</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <!-- tabs  -->
         <div class="tabcontent justify-center px-6 my-12 hidden" id="about">

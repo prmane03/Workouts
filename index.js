@@ -103,3 +103,18 @@ function switchTab(evt, tcid) {
     document.getElementById(tcid).classList.remove("hidden");
     evt.classList.add("activeTabLink");
   }
+
+
+
+  // BMI calculator 
+function calculateBMI(){
+  document.getElementById('bmiRes').innerHTML = parseFloat(document.getElementById('BMIweight').value / Math.pow(document.getElementById('BMIhight').value/100,2)).toFixed(2);
+}
+
+  document.getElementById("BMIhight").addEventListener('keyup',()=>{
+    calculateBMI();
+  })
+
+  document.getElementById("BMIweight").addEventListener('keyup',()=>{
+    calculateBMI();
+  })
